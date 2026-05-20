@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahit's Revenge - The Mini Game</title>
+    <style>
+        :root {
+            --clr-terminal: #ff8c00;
+            --clr-bg: #050505;
+        }
+        body {
+            background: var(--clr-bg);
+            color: var(--clr-terminal);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .game-header { text-align: center; margin-bottom: 10px; }
+        .canvas-container {
+            position: relative;
+            border: 4px solid #333;
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+        }
+        /* CRT Scanline Effect */
+        .canvas-container::after {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+        canvas { display: block; background: #000; }
+        .controls { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; }
+        .btn {
+            background: #222; color: var(--clr-terminal); border: 1px solid var(--clr-terminal);
+            padding: 15px; text-align: center; cursor: pointer; border-radius: 5px;
+            user-select: none;
+        }
+        .btn:active { background: var(--clr-terminal); color: #000; }
+        .stats { margin-top: 15px; font-weight: bold; }
+        .back-link { margin-top: 20px; color: #666; text-decoration: none; font-size: 0.8rem; }
+        .back-link:hover { color: var(--clr-terminal); }
+        
+        @media (min-width: 768px) { .controls { display: none; } }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .game-header h1 {
+                font-size: 1.5rem;
+            }
+            .game-header p {
+                font-size: 0.8rem;
+            }
+            .canvas-container {
+                width: 90vw; /* Make canvas container take 90% of viewport width */
+                height: 90vw; /* Keep it square */
+            }
+            canvas {
+                width: 100%;
+                height: 100%;
+            }
+            .controls { grid-template-columns: repeat(3, 1fr); width: 80%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-header">
+        <h1>🕵️ RAHIT'S REVENGE</h1>
+        <p>Collect Evidence (💻) & Avoid Captains (😈🔥)</p>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <div class="stats">
+        SCORE: <span id="score-value">0</span> | STATUS: <span id="status-message">Stealth Mode</span>
+    </div>
+
+    <div class="controls">
+        <div></div>
+        <div class="btn" onclick="move('up')">▲</div>
+        <div></div>
+        <div class="btn" onclick="move('left')">◀</div>
+        <div class="btn" onclick="move('down')">▼</div>
+        <div class="btn" onclick="move('right')">▶</div>
+    </div>
+
+    <a href="index.html" class="back-link">ESC - Return to Hostel</a>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

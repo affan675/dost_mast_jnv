@@ -109,6 +109,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderGuestbook();
 
+    // ======================
+    // 3.5 WARDEN RADAR ALERTS
+    // ======================
+    const alerts = [
+        "🚨 WARDEN RADAR: Checking 3rd Floor! Hide the laptops!",
+        "📢 ANNOUNCEMENT: Mess mein paneer khatam ho gaya.",
+        "⚠️ ALERT: Rahit is near the staff room. Stay alert.",
+        "🔥 VIBE CHECK: Affan and Chayan are planning something big.",
+        "🤫 WHISPER: Principal sir ka mood kharab hai aaj."
+    ];
+
+    function showWardenAlert() {
+        const alertBox = document.createElement('div');
+        alertBox.className = 'warden-alert';
+        alertBox.textContent = alerts[Math.floor(Math.random() * alerts.length)];
+        document.body.appendChild(alertBox);
+
+        setTimeout(() => {
+            alertBox.classList.add('fade-out');
+            setTimeout(() => alertBox.remove(), 500);
+        }, 4000);
+    }
+
+    // Show an alert every 15-30 seconds
+    setInterval(showWardenAlert, Math.random() * (30000 - 15000) + 15000);
+
+    // ======================
+    // 4. RAHIT'S REVENGE TRIGGER
+    // ======================
+    const rahitTrigger = document.querySelector('.footer__highlight');
+    let clickCount = 0;
+
+    if (rahitTrigger) {
+        rahitTrigger.style.cursor = 'pointer';
+        rahitTrigger.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 5) {
+                alert("🚨 RAHIT'S REVENGE ACTIVATED! 🚨\n\n'Ab principal sir ko sab bataunga!'");
+                window.location.href = 'game.html';
+                clickCount = 0;
+            } else {
+                console.log(`Revenge progress: ${clickCount}/5`);
+            }
+        });
+    }
+
     // Small style addition for quote flash (optional class)
     const style = document.createElement('style');
     style.textContent = `
@@ -120,6 +166,22 @@ document.addEventListener('DOMContentLoaded', () => {
             50% { transform: scale(1.02); background-color: rgba(255,140,0,0.15); }
             100% { transform: scale(1); }
         }
+        .warden-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            z-index: 9999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+        .fade-out { opacity: 0; transition: opacity 0.5s; }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
     `;
     document.head.appendChild(style);
 });
