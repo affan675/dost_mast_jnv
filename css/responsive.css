@@ -1,0 +1,233 @@
+/* =============================================
+   RESPONSIVE.CSS
+   Mobile-first: base styles target ≤600px.
+   Overrides for tablets (≥601px) and desktops (≥768px).
+   Touch-friendly enhancements throughout.
+============================================= */
+
+/* ---------- MOBILE (≤600px) ---------- */
+/* Already covered in style.css. Here we fine-tune spacing & readability for very small screens. */
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 15px; /* slightly smaller for small phones */
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 0.8rem;
+    }
+
+    .header {
+        padding: 1.8rem 0 1.5rem;
+    }
+
+    .header__title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    .header__roles {
+        gap: 1rem;
+    }
+
+    .role__badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.8rem;
+    }
+
+    .role__name {
+        font-size: 1rem;
+    }
+
+    .header__tagline {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        line-height: 1.5;
+    }
+
+    .section__heading {
+        font-size: 1.4rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .card__inner {
+        padding: 1.5rem 1rem;
+    }
+
+    .card__name {
+        font-size: 1.5rem;
+    }
+
+    .card__title {
+        font-size: 0.8rem;
+    }
+
+    .card__story p,
+    .trait__value {
+        font-size: 0.85rem;
+    }
+
+    .rivalry__container {
+        padding: 1.5rem 1rem;
+    }
+
+    .rivalry__value-display {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .quotes__text {
+        font-size: 0.9rem;
+    }
+
+    .footer__line {
+        font-size: 0.8rem;
+    }
+
+    /* Ensure all interactive elements have 44px touch target */
+    .rivalry__slider::-webkit-slider-thumb {
+        width: 28px;
+        height: 28px;
+        margin-top: -7px; /* adjust vertical alignment */
+    }
+    .rivalry__slider::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
+    }
+    .rivalry__slider-track {
+        height: 12px; /* increase track height for easier touch */
+    }
+
+    .btn {
+        min-height: 44px;
+        padding: 0.8rem 1.6rem; /* ensure height */
+    }
+}
+
+/* ---------- TABLET (≥601px) ---------- */
+@media screen and (min-width: 601px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .header__title {
+        font-size: 2.5rem;
+    }
+
+    .header__tagline {
+        font-size: 1.1rem;
+    }
+
+    .section__heading {
+        font-size: 2rem;
+    }
+
+    /* Profiles grid becomes two columns */
+    .profiles__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .card__inner {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Rivalry meter wider */
+    .rivalry__container {
+        padding: 2rem 2.5rem;
+    }
+
+    .rivalry__value-display {
+        font-size: 2.8rem;
+    }
+
+    /* Guestbook grid becomes two columns */
+    .guestbook__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__line {
+        font-size: 0.95rem;
+    }
+}
+
+/* ---------- DESKTOP (≥768px) ---------- */
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .header__title {
+        font-size: 3.2rem;
+        letter-spacing: 3px;
+    }
+
+    .header__roles {
+        gap: 3rem;
+    }
+
+    .role__badge {
+        font-size: 0.9rem;
+    }
+
+    .header__tagline {
+        max-width: 800px;
+        font-size: 1.15rem;
+    }
+
+    .profiles__grid {
+        gap: 2.5rem;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .section__heading {
+        font-size: 2.2rem;
+    }
+
+    .rivalry__container {
+        max-width: 750px;
+        padding: 2.5rem 3rem;
+    }
+
+    .rivalry__value-display {
+        font-size: 3rem;
+    }
+
+    .guestbook__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .quotes__container {
+        max-width: 650px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+    }
+}
+
+/* Touch-friendly overrides for all screens */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .rivalry__slider {
+        cursor: default; /* on touch devices, no need for pointer cursor */
+    }
+
+    .btn:active {
+        background: var(--clr-accent-secondary);
+    }
+}
