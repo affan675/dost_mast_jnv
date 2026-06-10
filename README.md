@@ -63,17 +63,17 @@ Experience the nostalgic chaos of hostel life, JNV style!
 
 | Light Mode | Dark Mode |
 |:---:|:---:|
-| ![Light Theme](assets/screenshots/home_page.jpg) | ![Dark Theme](assets/screenshots/dextop.jpg) |
+| ![Light Theme](assets/screenshots/home_page.JPG) | ![Dark Theme](assets/screenshots/dextop.jpg) |
 | *Clean light theme with orange accents* | *Edgy dark mode – hostel rebel vibes* |
 
 | Boot Preloader | Rivalry Meter |
 |:---:|:---:|
-| ![Boot Terminal](assets/screenshots/loader.jpg) | ![Rivalry Slider](assets/screenshots/rival.jpg) |
+| ![Boot Terminal](assets/screenshots/loader.JPG) | ![Rivalry Slider](assets/screenshots/rival.JPG |
 | *“HOSTEL_WIFI_DETECTED… ACCESS GRANTED”* | *Slide to decide who’s more dangerous* |
 
 | Quote Generator | Guest Book |
 |:---:|:---:|
-| ![Captain ka Farmaan](assets/screenshots/captain.jpg) | ![Guest Book](assets/screenshots/others.jpg) |
+| ![Captain ka Farmaan](assets/screenshots/captain.JPG) | ![Guest Book](assets/screenshots/others.JPG) |
 | *Random Hinglish quotes from the legends* | *Fake comments from the hostel gang* |
 
 > *Note:* Replace the screenshot paths with actual screenshots from `assets/screenshots/`.
@@ -123,7 +123,7 @@ project/
 
 1.  **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/jnv-ke-badmash.git
+   git clone https://github.com/affan675/dost-mast-jnv.git
    cd jnv-ke-badmash
    ```
 2.  **Open `index.html`:**
@@ -143,7 +143,7 @@ Enjoy the hostel rebel experience.
 All interactions are instant and the site works seamlessly offline.
 
 🌐 Live Demo
-🚧 Coming soon – will be deployed on GitHub Pages / Netlify.
+🚧 Coming soon – Now is deployed on GitHub Pages.
 (Link placeholder: https://affan675.github.io/dost_mast_jnv)
 
 🤝 Contributing
@@ -162,7 +162,7 @@ Pull requests are warmly welcome! If you have major changes or new features in m
 This project is licensed under the MIT License. See the `LICENSE` file in the repository for full details.
 
 👤 Author
-Affan Adil & Chayan Sarkar
+Affan Adil
 Hostel legends, suspension survivors, captain material.
 “Rahit ka revenge abhi bhi pending hai.”
 
